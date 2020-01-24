@@ -12,8 +12,16 @@ module.exports = class customCSS extends Plugin {
     if (fs.existsSync(resolve(__dirname, 'custom.css')) == false) {
       fs.writeFileSync(resolve(__dirname, 'custom.css'), "");
     }
-    this.loadCSS(resolve(__dirname, 'style.scss'));
+    this.addCss()
     this.registerSettings('customCSS', 'Custom CSS', Settings);
+  }
+
+  addCss() {
+    try {
+    this.loadCSS(resolve(__dirname, 'style.scss'));
+    } catch {
+      this.loadCSS(resolve(__dirname, 'fallback.scss'))
+    }
   }
 
   getCss() {
@@ -27,6 +35,6 @@ module.exports = class customCSS extends Plugin {
 
   updateCss(css) {
     fs.writeFileSync(resolve(__dirname, 'custom.css'), css);
-    this.loadCSS(resolve(__dirname, 'style.scss'));
+    this.addCss()
   }
 };
