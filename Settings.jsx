@@ -2,8 +2,6 @@ const { React } = require('powercord/webpack');
 const { SwitchItem } = require('powercord/components/settings');
 const { UnControlled } = require('react-codemirror2');
 const { Button } = require('powercord/components')
-const { resolve } = require('path');
-const fs = require('fs')
 
 require('codemirror/mode/css/css');
 require('codemirror/addon/edit/matchbrackets');
