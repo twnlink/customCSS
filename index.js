@@ -9,6 +9,9 @@ const Settings = require('./Settings');
 module.exports = class customCSS extends Plugin {
 
   async startPlugin () {
+    if (fs.existsSync(resolve(__dirname, 'custom.css')) == false) {
+      fs.writeFileSync(resolve(__dirname, 'custom.css'), "");
+    }
     this.loadCSS(resolve(__dirname, 'style.scss'));
     this.registerSettings('customCSS', 'Custom CSS', Settings);
   }
