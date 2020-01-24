@@ -1,0 +1,14 @@
+{
+  "name": "customCSS",
+  "version": "0.0.1",
+  "description": "A placeholder custom css loader for Powercord.",
+  "main": "index.js",
+  "author": "creatable",
+  "license": "Apache",
+  "dependencies": {
+    "codemirror": "^5.51.0",
+    "react": "^16.12.0",
+    "react-codemirror2": "^6.0.0"
+  },
+  "type": "module"
+}
