@@ -14,7 +14,7 @@ require('codemirror/addon/dialog/dialog');
 module.exports = class Settings extends React.Component {
   constructor () {
     super();
-    this.plugin = powercord.pluginManager.get('customCSS');
+    this.plugin = [...powercord.pluginManager.plugins].filter((f) => f[0].toLowerCase() === "customcss")[0][1];
     this.state = {
       Css: this.plugin.getCss()
     }
